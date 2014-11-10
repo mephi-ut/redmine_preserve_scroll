@@ -1,0 +1,15 @@
+<%# javascript_include_tag "scroll-sneak.js", :plugin => :redmine_preserve_scroll %>
+<%= javascript_tag do %>
+	if (typeof sneaky == 'undefined') {
+		sneaky = new ScrollSneak(location.hostname);
+	}
+	(function() {
+		//var pages = document.getElementById('context-menu').getElementsByClassName('folder').getElementsByTagName('a');
+		var pages = $('#context-menu .folder a')
+		var i = 0;
+		var len = pages.length;
+		for (; i < len; i++) {
+			pages[i].onclick = sneaky.sneak;
+		}
+	})();
+<% end %>

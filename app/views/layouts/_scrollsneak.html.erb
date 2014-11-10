@@ -1,0 +1,6 @@
+<%= javascript_include_tag "scroll-sneak.js", :plugin => :redmine_preserve_scroll %>
+<%= javascript_tag do %>
+	if (typeof sneaky == 'undefined') {
+		sneaky = new ScrollSneak(location.hostname);
+	}
+<% end %>
